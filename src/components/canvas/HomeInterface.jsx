@@ -9,6 +9,8 @@ const HomeInterface = () => {
     if (gameStatus !== 'home') return null
 
     const { personal } = resumeData
+    const isMobile = window.innerWidth < 768
+    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024
 
     return (
         <div style={{
@@ -23,16 +25,17 @@ const HomeInterface = () => {
             background: 'rgba(0, 0, 0, 0.7)',
             backdropFilter: 'blur(10px)',
             zIndex: 1000,
-            pointerEvents: 'auto'
+            pointerEvents: 'auto',
+            padding: isMobile ? '10px' : '20px'
         }}>
             <div style={{
-                maxWidth: '700px',
-                width: '90%',
+                maxWidth: isTablet ? '600px' : '700px',
+                width: '100%',
                 color: 'white',
                 background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(10, 10, 30, 0.95))',
-                padding: '50px',
-                borderRadius: '20px',
-                border: '3px solid #00ffff',
+                padding: isMobile ? '25px 20px' : isTablet ? '35px' : '50px',
+                borderRadius: isMobile ? '15px' : '20px',
+                border: isMobile ? '2px solid #00ffff' : '3px solid #00ffff',
                 fontFamily: "'Courier New', Courier, monospace",
                 userSelect: 'none',
                 boxShadow: '0 0 60px rgba(0, 255, 255, 0.6), inset 0 0 40px rgba(0, 255, 255, 0.15)',
@@ -40,17 +43,17 @@ const HomeInterface = () => {
                 overflowY: 'auto'
             }}>
                 {/* Profile Photo */}
-                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                <div style={{ textAlign: 'center', marginBottom: isMobile ? '20px' : '30px' }}>
                     <img
                         src={personal.image}
                         alt="Profile"
                         style={{
-                            width: '180px',
-                            height: '180px',
+                            width: isMobile ? '120px' : isTablet ? '150px' : '180px',
+                            height: isMobile ? '120px' : isTablet ? '150px' : '180px',
                             borderRadius: '50%',
-                            border: '6px solid #00ffff',
+                            border: isMobile ? '4px solid #00ffff' : '6px solid #00ffff',
                             boxShadow: '0 0 40px rgba(0, 255, 255, 0.8)',
-                            marginBottom: '25px',
+                            marginBottom: isMobile ? '15px' : '25px',
                             objectFit: 'cover',
                             objectPosition: 'center center'
                         }}
@@ -58,11 +61,11 @@ const HomeInterface = () => {
 
                     {/* Name */}
                     <h1 style={{
-                        fontSize: '3rem',
-                        margin: '0 0 15px 0',
+                        fontSize: isMobile ? '1.8rem' : isTablet ? '2.5rem' : '3rem',
+                        margin: '0 0 10px 0',
                         textTransform: 'uppercase',
                         textShadow: '0 0 20px #00ffff',
-                        letterSpacing: '6px',
+                        letterSpacing: isMobile ? '3px' : '6px',
                         fontWeight: 'bold',
                         color: '#00ffff'
                     }}>
@@ -72,11 +75,11 @@ const HomeInterface = () => {
                     {/* Title */}
                     <p style={{
                         color: '#ffffff',
-                        fontSize: '1.3rem',
+                        fontSize: isMobile ? '1rem' : isTablet ? '1.2rem' : '1.3rem',
                         marginTop: '10px',
-                        marginBottom: '20px',
+                        marginBottom: isMobile ? '15px' : '20px',
                         fontWeight: 'bold',
-                        letterSpacing: '3px'
+                        letterSpacing: isMobile ? '2px' : '3px'
                     }}>
                         {personal.title}
                     </p>
@@ -84,9 +87,9 @@ const HomeInterface = () => {
                     {/* Description */}
                     <p style={{
                         color: '#ccc',
-                        fontSize: '1.1rem',
+                        fontSize: isMobile ? '0.9rem' : isTablet ? '1rem' : '1.1rem',
                         lineHeight: '1.7',
-                        margin: '0 auto 30px auto',
+                        margin: '0 auto' + (isMobile ? ' 20px' : ' 30px') + ' auto',
                         textAlign: 'center',
                         maxWidth: '550px'
                     }}>
@@ -97,8 +100,8 @@ const HomeInterface = () => {
                 {/* Social Links */}
                 <div style={{
                     display: 'flex',
-                    gap: '15px',
-                    marginBottom: '30px',
+                    gap: isMobile ? '10px' : '15px',
+                    marginBottom: isMobile ? '20px' : '30px',
                     justifyContent: 'center',
                     flexWrap: 'wrap'
                 }}>
@@ -109,10 +112,10 @@ const HomeInterface = () => {
                             background: 'rgba(0, 255, 255, 0.1)',
                             border: '2px solid #00ffff',
                             color: '#00ffff',
-                            padding: '12px 24px',
+                            padding: isMobile ? '10px 16px' : '12px 24px',
                             borderRadius: '10px',
                             textDecoration: 'none',
-                            fontSize: '1rem',
+                            fontSize: isMobile ? '0.85rem' : '1rem',
                             fontWeight: 'bold',
                             transition: 'all 0.3s',
                             cursor: 'pointer'
@@ -198,7 +201,7 @@ const HomeInterface = () => {
                 <div style={{
                     height: '2px',
                     background: 'linear-gradient(90deg, transparent, #00ffff, transparent)',
-                    margin: '30px 0'
+                    margin: isMobile ? '20px 0' : '30px 0'
                 }} />
 
                 {/* Start Journey Button */}
@@ -209,11 +212,11 @@ const HomeInterface = () => {
                         background: 'linear-gradient(135deg, #00ffff, #00aaaa)',
                         border: 'none',
                         color: '#000',
-                        padding: '20px',
+                        padding: isMobile ? '15px' : '20px',
                         cursor: 'pointer',
                         fontWeight: '900',
-                        fontSize: '1.6rem',
-                        letterSpacing: '6px',
+                        fontSize: isMobile ? '1.2rem' : isTablet ? '1.4rem' : '1.6rem',
+                        letterSpacing: isMobile ? '3px' : '6px',
                         textTransform: 'uppercase',
                         borderRadius: '12px',
                         boxShadow: '0 8px 30px rgba(0, 255, 255, 0.6)',
@@ -233,14 +236,14 @@ const HomeInterface = () => {
 
                 {/* System Status */}
                 <div style={{
-                    marginTop: '25px',
+                    marginTop: isMobile ? '15px' : '25px',
                     textAlign: 'center',
-                    fontSize: '0.85rem',
+                    fontSize: isMobile ? '0.7rem' : '0.85rem',
                     color: '#666',
                     fontFamily: 'monospace'
                 }}>
                     SYSTEM_STATUS: <span style={{ color: '#00ff00' }}>READY</span><br />
-                    SCROLL_TO_EXPLORE_CAREER_PATH
+                    {!isMobile && 'SCROLL_TO_EXPLORE_CAREER_PATH'}
                 </div>
             </div>
         </div>

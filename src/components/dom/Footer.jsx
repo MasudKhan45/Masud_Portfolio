@@ -14,7 +14,7 @@ const Footer = () => {
             bottom: 0,
             left: 0,
             width: '100%',
-            padding: '40px',
+            padding: window.innerWidth < 768 ? '20px 15px' : '40px',
             background: 'linear-gradient(to top, rgba(0,0,0,0.95), transparent)',
             color: 'white',
             fontFamily: 'monospace',
@@ -27,19 +27,19 @@ const Footer = () => {
                 textAlign: 'center'
             }}>
                 <h1 style={{
-                    fontSize: '3rem',
-                    marginBottom: '20px',
+                    fontSize: window.innerWidth < 768 ? '1.8rem' : '3rem',
+                    marginBottom: '15px',
                     color: '#00ffff',
                     textShadow: '0 0 20px #00ffff',
                     textTransform: 'uppercase',
-                    letterSpacing: '5px'
+                    letterSpacing: window.innerWidth < 768 ? '2px' : '5px'
                 }}>
                     LEVEL COMPLETE
                 </h1>
 
                 <p style={{
-                    fontSize: '1.2rem',
-                    marginBottom: '30px',
+                    fontSize: window.innerWidth < 768 ? '0.9rem' : '1.2rem',
+                    marginBottom: '20px',
                     color: '#aaa'
                 }}>
                     You've explored the journey of {resumeData.personal.name}
@@ -47,7 +47,7 @@ const Footer = () => {
 
                 <div style={{
                     display: 'flex',
-                    gap: '20px',
+                    gap: window.innerWidth < 768 ? '10px' : '20px',
                     justifyContent: 'center',
                     flexWrap: 'wrap'
                 }}>
