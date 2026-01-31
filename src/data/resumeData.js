@@ -4,8 +4,8 @@ export const resumeData = {
         title: "Mechanical Engineer | Data Analyst",
         summary: "Bridging mechanical engineering expertise with data analytics. Passionate about IoT, AI, and transforming data into actionable insights.",
         email: "masudist32@gmail.com",
-        linkedin: "https://linkedin.com/in/masud-khan",
-        github: "https://github.com/masudkhan",
+        linkedin: "https://www.linkedin.com/in/masud-khan-246514241/",
+        github: "https://github.com/MasudKhan45/",
         location: "Bilaspur / Remote",
         image: "/assets/profile.jpg"
     },
