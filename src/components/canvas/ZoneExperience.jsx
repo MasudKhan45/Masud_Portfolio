@@ -121,13 +121,6 @@ const ZoneExperience = ({ startZ, length }) => {
                             />
                         </mesh>
 
-                        {/* Point light */}
-                        <pointLight
-                            position={[0, 0, 1]}
-                            color="#ff6600"
-                            intensity={1}
-                            distance={5}
-                        />
                     </group>
                 )
             })}

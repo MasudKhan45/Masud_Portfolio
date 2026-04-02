@@ -121,16 +121,25 @@ const ZoneProjects = ({ startZ, length }) => {
                                 margin: '0 auto'
                             }}>
                                 {project.desc}
+                                {project.pipeline && (
+                                    <div style={{
+                                        fontSize: '0.7rem',
+                                        color: '#00ff88',
+                                        background: 'rgba(0, 255, 136, 0.08)',
+                                        border: '1px solid #00ff88',
+                                        borderRadius: '5px',
+                                        padding: '5px 8px',
+                                        marginTop: '8px',
+                                        letterSpacing: '0.3px',
+                                        fontWeight: 'bold',
+                                        textAlign: 'center'
+                                    }}>
+                                        🔗 {project.pipeline}
+                                    </div>
+                                )}
                             </div>
                         </Html>
 
-                        {/* Point light */}
-                        <pointLight
-                            position={[0, 1.5, 0]}
-                            color="#ff00ff"
-                            intensity={1.5}
-                            distance={5}
-                        />
                     </group>
                 )
             })}

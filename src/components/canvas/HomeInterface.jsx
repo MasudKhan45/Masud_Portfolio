@@ -29,11 +29,11 @@ const HomeInterface = () => {
             padding: isMobile ? '10px' : '20px'
         }}>
             <div style={{
-                maxWidth: isTablet ? '600px' : '700px',
+                maxWidth: isTablet ? '520px' : '580px',
                 width: '100%',
                 color: 'white',
                 background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(10, 10, 30, 0.95))',
-                padding: isMobile ? '25px 20px' : isTablet ? '35px' : '50px',
+                padding: isMobile ? '18px 16px' : isTablet ? '24px' : '30px',
                 borderRadius: isMobile ? '15px' : '20px',
                 border: isMobile ? '2px solid #00ffff' : '3px solid #00ffff',
                 fontFamily: "'Courier New', Courier, monospace",
@@ -48,12 +48,12 @@ const HomeInterface = () => {
                         src={personal.image}
                         alt="Profile"
                         style={{
-                            width: isMobile ? '120px' : isTablet ? '150px' : '180px',
-                            height: isMobile ? '120px' : isTablet ? '150px' : '180px',
+                            width: isMobile ? '85px' : isTablet ? '105px' : '120px',
+                            height: isMobile ? '85px' : isTablet ? '105px' : '120px',
                             borderRadius: '50%',
-                            border: isMobile ? '4px solid #00ffff' : '6px solid #00ffff',
-                            boxShadow: '0 0 40px rgba(0, 255, 255, 0.8)',
-                            marginBottom: isMobile ? '15px' : '25px',
+                            border: isMobile ? '3px solid #00ffff' : '4px solid #00ffff',
+                            boxShadow: '0 0 30px rgba(0, 255, 255, 0.8)',
+                            marginBottom: isMobile ? '10px' : '15px',
                             objectFit: 'cover',
                             objectPosition: 'center center'
                         }}
@@ -61,11 +61,11 @@ const HomeInterface = () => {
 
                     {/* Name */}
                     <h1 style={{
-                        fontSize: isMobile ? '1.8rem' : isTablet ? '2.5rem' : '3rem',
-                        margin: '0 0 10px 0',
+                        fontSize: isMobile ? '1.5rem' : isTablet ? '2rem' : '2.4rem',
+                        margin: '0 0 6px 0',
                         textTransform: 'uppercase',
                         textShadow: '0 0 20px #00ffff',
-                        letterSpacing: isMobile ? '3px' : '6px',
+                        letterSpacing: isMobile ? '3px' : '5px',
                         fontWeight: 'bold',
                         color: '#00ffff'
                     }}>
@@ -75,25 +75,26 @@ const HomeInterface = () => {
                     {/* Title */}
                     <p style={{
                         color: '#ffffff',
-                        fontSize: isMobile ? '1rem' : isTablet ? '1.2rem' : '1.3rem',
-                        marginTop: '10px',
-                        marginBottom: isMobile ? '15px' : '20px',
+                        fontSize: isMobile ? '0.8rem' : isTablet ? '0.95rem' : '1rem',
+                        marginTop: '6px',
+                        marginBottom: isMobile ? '10px' : '14px',
                         fontWeight: 'bold',
-                        letterSpacing: isMobile ? '2px' : '3px'
+                        letterSpacing: isMobile ? '1px' : '2px'
                     }}>
                         {personal.title}
                     </p>
 
-                    {/* Description */}
+                    {/* Description - compact 2-line summary */}
                     <p style={{
-                        color: '#ccc',
-                        fontSize: isMobile ? '0.9rem' : isTablet ? '1rem' : '1.1rem',
-                        lineHeight: '1.7',
-                        margin: '0 auto' + (isMobile ? ' 20px' : ' 30px') + ' auto',
+                        color: '#aaa',
+                        fontSize: isMobile ? '0.78rem' : isTablet ? '0.85rem' : '0.9rem',
+                        lineHeight: '1.5',
+                        margin: '0 auto',
                         textAlign: 'center',
-                        maxWidth: '550px'
+                        maxWidth: '480px'
                     }}>
-                        {personal.summary}
+                        Data-focused engineer with hands-on Python, SQL & Power BI experience.<br />
+                        Turning raw datasets into actionable dashboards & ML-driven insights.
                     </p>
                 </div>
 

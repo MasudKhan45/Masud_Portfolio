@@ -129,10 +129,25 @@ const ZoneNeon = ({ startZ, length }) => {
                                             fontSize: '0.9rem',
                                             lineHeight: '1.5',
                                             color: '#ddd',
-                                            margin: '0'
+                                            margin: '0 0 10px 0'
                                         }}>
                                             {project.desc}
                                         </p>
+                                        {project.pipeline && (
+                                            <div style={{
+                                                fontSize: '0.75rem',
+                                                color: '#00ff88',
+                                                background: 'rgba(0, 255, 136, 0.08)',
+                                                border: '1px solid #00ff88',
+                                                borderRadius: '6px',
+                                                padding: '8px 10px',
+                                                marginTop: '8px',
+                                                letterSpacing: '0.5px',
+                                                fontWeight: 'bold'
+                                            }}>
+                                                🔗 PIPELINE: {project.pipeline}
+                                            </div>
+                                        )}
                                     </div>
                                 </Html>
                             </group>

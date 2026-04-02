@@ -40,20 +40,21 @@ const ZoneSkills = ({ startZ, length }) => {
                 </mesh>
             </group>
 
-            {/* Skills Display - 2 Column Layout */}
+            {/* Skills Display - 2 Column Layout (Leaves center clear for the character) */}
             {skills.map((skill, i) => {
                 // Create a 2-column layout
-                const col = i % 2 // 0 or 1 (left or right)
+                const col = i % 2 // 0 or 1
                 const row = Math.floor(i / 2)
 
-                const xPos = col === 0 ? -3.5 : 3.5 // Left or right
-                const zPos = startZ - 8 - (row * 5) // 5 units spacing between rows
+                // xPos leaves the center (x=0) clear for the character running path
+                const xPos = col === 0 ? -4.5 : 4.5
+                const zPos = startZ - 8 - (row * 5) // 5 units spacing between rows for easier reading
 
                 return (
                     <group key={i} position={[xPos, 2, zPos]}>
                         {/* Skill Badge Background */}
                         <mesh>
-                            <boxGeometry args={[5.5, 1, 0.12]} />
+                            <boxGeometry args={[5.5, 0.9, 0.12]} />
                             <meshStandardMaterial
                                 color="#1a1a3a"
                                 emissive="#00ffff"
@@ -64,7 +65,7 @@ const ZoneSkills = ({ startZ, length }) => {
 
                         {/* Glowing Border */}
                         <mesh position={[0, 0, 0.07]}>
-                            <boxGeometry args={[5.7, 1.15, 0.05]} />
+                            <boxGeometry args={[5.7, 1.05, 0.05]} />
                             <meshBasicMaterial
                                 color="#00ffff"
                                 transparent
@@ -75,23 +76,16 @@ const ZoneSkills = ({ startZ, length }) => {
                         {/* Skill Name */}
                         <Text
                             position={[0, 0, 0.15]}
-                            fontSize={0.35}
+                            fontSize={0.32}
                             color="white"
                             anchorX="center"
                             anchorY="middle"
-                            maxWidth={5}
+                            maxWidth={5.2}
                             fontWeight="bold"
                         >
                             {skill.name}
                         </Text>
 
-                        {/* Glow effect */}
-                        <pointLight
-                            position={[0, 0, 0.5]}
-                            color="#00ffff"
-                            intensity={0.6}
-                            distance={4}
-                        />
                     </group>
                 )
             })}

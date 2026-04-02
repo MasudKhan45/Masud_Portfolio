@@ -64,8 +64,8 @@ const UI = () => {
                     fontSize: '0.8rem',
                     textShadow: '0 0 5px rgba(0,255,255,0.8)'
                 }}>
-                    {scrollProgress < 0.52 ? 'SECTION: SKILLS' :
-                        scrollProgress < 0.72 ? 'SECTION: EXPERIENCE' :
+                    {scrollProgress < 0.54 ? 'SECTION: SKILLS' :
+                        scrollProgress < 0.69 ? 'SECTION: EXPERIENCE' :
                             'SECTION: PROJECTS'}
                 </div>
             )}
